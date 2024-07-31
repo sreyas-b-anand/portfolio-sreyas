@@ -42,10 +42,11 @@ const ContactMe = () => {
   return (
     <>
       <Box
-        className="bg-[#2c2b2b] h-96"
+        className="bg-[#121212] h-96"
         component="form"
         onSubmit={handleSubmit}
         sx={{
+          fontFamily: "montserrat",
           px: 4,
           maxHeight: 400,
           display: "flex",
@@ -54,16 +55,18 @@ const ContactMe = () => {
           flexWrap: "wrap",
           gap: 3,
           maxWidth: 480,
-          borderRadius: 2,
-          boxShadow: 3,
+          borderTopLeftRadius: "10px",
+          borderBottomLeftRadius: { md: "10px", xs: 0 },
+          boxShadow: 2,
+          borderTopRightRadius: { xs: "10px", md: 0 },
         }}
       >
         <Typography
           variant="h5"
           mb={2}
           sx={{
+            fontFamily: "montserrat",
             color: "white",
-            fontFamily: "monospace",
             pt: 4,
           }}
         >
@@ -74,7 +77,6 @@ const ContactMe = () => {
           component={"div"}
           sx={{
             display: "grid",
-
             alignItems: "center",
             flexWrap: "wrap",
             gap: 2,
@@ -83,7 +85,7 @@ const ContactMe = () => {
           <Grid container spacing={2} columns={16}>
             <Grid item xs={8}>
               <TextField
-                className="bg-gray-300"
+                className="bg-white"
                 required
                 id="standard-search"
                 label="First name"
@@ -92,6 +94,7 @@ const ContactMe = () => {
                 value={firstname}
                 onChange={(e) => setfirstName(e.target.value)}
                 sx={{
+                  fontFamily: "montserrat",
                   borderRadius: 1,
                   maxWidth: 450,
                   color: "#2f2f2f",
@@ -101,7 +104,7 @@ const ContactMe = () => {
             </Grid>
             <Grid item xs={8}>
               <TextField
-                className="bg-gray-300"
+                className="bg-white"
                 id="standard-search"
                 label="Last name"
                 type="text"
@@ -109,6 +112,7 @@ const ContactMe = () => {
                 value={lastname}
                 onChange={(e) => setlastName(e.target.value)}
                 sx={{
+                  fontFamily: "montserrat",
                   backgroundColor: "white",
                   border: "#999999",
                   maxWidth: 450,
@@ -123,7 +127,7 @@ const ContactMe = () => {
         <Grid container spacing={2} sx={{ maxWidth: 450 }}>
           <Grid item xs={12} sx={{ mx: 2 }}>
             <TextField
-              className="bg-gray-300"
+              className="bg-white"
               required
               id="standard-search"
               label="Email"
@@ -133,6 +137,7 @@ const ContactMe = () => {
               onChange={(e) => setEmail(e.target.value)}
               fullWidth
               sx={{
+                fontFamily: "montserrat",
                 backgroundColor: "white",
                 color: "#2f2f2f",
                 borderRadius: 1,
@@ -151,6 +156,7 @@ const ContactMe = () => {
               onChange={(e) => setMessage(e.target.value)}
               fullWidth
               sx={{
+                fontFamily: "montserrat",
                 backgroundColor: "white",
                 color: "#2f2f2f",
                 borderRadius: 1,

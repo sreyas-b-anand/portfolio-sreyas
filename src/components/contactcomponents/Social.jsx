@@ -7,25 +7,40 @@ function Social() {
   return (
     <>
       <Box
-        className="bg-[#121212] h-96 "
+        className="bg-[#ffffff] h-96 text-black"
         sx={{
           maxWidth: 480,
-          px: 10,
+          px:4,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           flexWrap: "wrap",
           justifyContent: "center",
           boxShadow: 3,
-          borderRadius: "10px",
+          borderTopRightRadius : {md : '10px' , xs:0 },
+          borderBottomRightRadius : '10px',
           gap: 2,
+          
+         borderBottomLeftRadius: {xs : '10px' , md:0},
+          
         }}
       >
-        <Typography
-          sx={{ color: "white", fontFamily: "monospace", fontSize: 20 }}
+        <Box sx={{
+            maxWidth:400,
+            px:6,
+            gap:4,
+            borderRadius: "10px ",
+            boxShadow: 2,
+            
+            py: 2,
+          }}
+      >
+        <Typography variant="h5"
+          sx={{  color: "black", fontFamily: "montserrat", fontSize: { xs: 18 , md:20 } ,  }}
         >
           Let's Connect....
         </Typography>
+        </Box>
         <SocialMailPh />
       </Box>
     </>

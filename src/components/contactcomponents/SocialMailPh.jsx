@@ -6,7 +6,7 @@ import ig from "../../assets/socialimg/ig-x-ld/ig.jpeg";
 import x from "../../assets/socialimg/ig-x-ld/x.jpeg";
 import ld from "../../assets/socialimg/ig-x-ld/ld.jpeg";
 
-import {Link} from "@mui/material";
+import { Link } from "@mui/material";
 function SocialMailPh() {
   const medias = [
     {
@@ -30,9 +30,10 @@ function SocialMailPh() {
       <Box
         className=" flex flex-col "
         sx={{
-          px : 3,
-          gap:4,
-          borderRadius: "10px",
+          maxWidth: 400,
+          px: 3,
+          gap: 4,
+          borderRadius: "10px ",
           boxShadow: 3,
           flexWrap: "wrap",
           alignItems: "start",
