@@ -168,15 +168,11 @@ const ContactMe = () => {
         <Button
           type="submit"
           sx={{
+            backgroundColor: "#001123",
             color: "white",
             px: 2,
             mb: 2,
             fontFamily: "montserrat",
-            "&": {
-              hover: {
-                boxShadow: "3 cyan",
-              },
-            },
           }}
         >
           Send

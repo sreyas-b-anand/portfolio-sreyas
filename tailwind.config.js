@@ -10,6 +10,11 @@ module.exports = {
         cardbg : '#2D2D2D',
        
       },
+      filter: {
+        'none': 'none',
+        'brightness': 'brightness(1.5)',
+        'contrast': 'contrast(1.2)',
+      },
     },
   },
   plugins: [],

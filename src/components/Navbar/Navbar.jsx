@@ -12,9 +12,8 @@ import MenuItem from "@mui/material/MenuItem";
 //router
 import { Link } from "react-router-dom";
 
-
-//assets 
-import git from '../../assets/socialimg/git.jpg'
+//assets
+import git from "../../assets/socialimg/git.jpg";
 
 const pages = [
   { id: 1, link: "Home", href: "/" },
@@ -39,7 +38,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl" className=" bg-[#141414]">
         <Toolbar disableGutters className=" bg-[#141414]">
           <Typography
-          className="text-white"
+            className="text-white"
             variant="h6"
             noWrap
             component="a"
@@ -47,11 +46,11 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontWeight: 500,
+              fontWeight: 600,
               letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
-              fontFamily :'montserrat'
+              fontFamily: "montserrat",
             }}
           >
             SREYAS B ANAND
@@ -87,17 +86,29 @@ function ResponsiveAppBar() {
                 gap: 3,
               }}
             >
-              {pages.map((page) => (//responsive
-                <MenuItem key={page.id} onClick={handleCloseNavMenu} >     
-                  <Link to={page.href}>{page.link}</Link>
-                </MenuItem>
-              ))}
-              <MenuItem onClick={handleCloseNavMenu} ><Link to={'https://github.com/sreyas-b-anand'} target="_blank" rel="noopener norefferer">Github</Link></MenuItem>
+              {pages.map(
+                (
+                  page //responsive
+                ) => (
+                  <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                    <Link to={page.href}>{page.link}</Link>
+                  </MenuItem>
+                )
+              )}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link
+                  to={"https://github.com/sreyas-b-anand"}
+                  target="_blank"
+                  rel="noopener norefferer"
+                >
+                  Github
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
-         
+
           <Typography
-          className="text-white"
+            className="text-white"
             variant="h5"
             noWrap
             component="a"
@@ -106,11 +117,11 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
-              fontFamily :'montserrat'
+              fontFamily: "montserrat",
             }}
           >
             SREYAS B ANAND
@@ -123,21 +134,41 @@ function ResponsiveAppBar() {
               pl: 4,
             }}
           >
-            {pages.map((page) => (//normal
-              <Link
-                className="text-gray-400 hover:text-white"
-                to={page.href}
-                key={page.id}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, display: "block"  ,}}
-              >
-                {page.link}
-              </Link>
-            ))}
+            {pages.map(
+              (
+                page //normal
+              ) => (
+                <Link
+                  className="text-gray-400 hover:text-white"
+                  to={page.href}
+                  key={page.id}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, display: "block" }}
+                >
+                  {page.link}
+                </Link>
+              )
+            )}
           </Box>
-          <Box sx={{height : '100%' ,display : {xs : "none", md : 'flex'} , alignItems:"center" , justifyContent:"center" }}>
-            
-            <Link to={'https://github.com/sreyas-b-anand'} target="_blank" rel="noopener norefferer" className="border px-1 pr-2 flex items-center justify-center border-white rounded-[10px] opacity-[60%] hover:opacity-100"><IconButton sx={{height : 45 , width : 45 }}><img style={{borderRadius:"50%"}} src={git} alt="git"  /></IconButton> GitHub</Link>
+          <Box
+            sx={{
+              height: "100%",
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              to={"https://github.com/sreyas-b-anand"}
+              target="_blank"
+              rel="noopener norefferer"
+              className="border px-1 pr-2 flex items-center justify-center border-white rounded-[10px] opacity-[60%] hover:opacity-100"
+            >
+              <IconButton sx={{ height: 45, width: 45 }}>
+                <img style={{ borderRadius: "50%" }} src={git} alt="git" />
+              </IconButton>{" "}
+              GitHub
+            </Link>
           </Box>
         </Toolbar>
       </Container>

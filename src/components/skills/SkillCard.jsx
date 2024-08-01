@@ -10,7 +10,7 @@ import { SkillContext } from "../../pages/About";
 
 export default function SkillCard() {
   const skills = useContext(SkillContext);
-  
+
   return (
     <>
       <main className="flex flex-col items-center justify-center gap-3">
@@ -23,15 +23,13 @@ export default function SkillCard() {
           </Typography>
         </div>
         <Box
-        
           sx={{
-            border : 0,
-            
-            borderRadius : 4,
-            gap: {xs : 6 , md : 4},
+            border: 0,
+            borderRadius: 4,
+            gap: { xs: 6, md: 4 },
             display: { xs: "grid", md: "grid" },
-            gridTemplateColumns: { md: "repeat(3, 1fr)" },
-            gridTemplateRows: { md: "repeat(3, auto)" }
+            gridTemplateColumns: { md: "repeat(4, 1fr)" },
+            gridTemplateRows: { md: "repeat(3, auto)" },
           }}
           className="p-3   "
         >

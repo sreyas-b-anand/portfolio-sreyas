@@ -1,28 +1,29 @@
 import React from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+//assets
 import mail from "../../assets/socialimg/mail.jpeg";
 import ph from "../../assets/socialimg/ph.jpeg";
-import ig from "../../assets/socialimg/ig-x-ld/ig.jpeg";
-import x from "../../assets/socialimg/ig-x-ld/x.jpeg";
-import ld from "../../assets/socialimg/ig-x-ld/ld.jpeg";
 
+//icons
+import { GrInstagram } from "react-icons/gr";
+import { FaLinkedin } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+
+//material
+import { Box, IconButton, Typography } from "@mui/material";
 import { Link } from "@mui/material";
 function SocialMailPh() {
   const medias = [
     {
-      logo: ig,
+      logo: GrInstagram,
       link: "https://www.instagram.com/sre___y___a___s/",
-      alt: "ig",
     },
     {
-      logo: x,
+      logo: BsTwitterX,
       link: "https://twitter.com/sre___y___as___/",
-      alt: "x",
     },
     {
-      logo: ld,
+      logo: FaLinkedin,
       link: "https://www.linkedin.com/in/sreyas-b-anand",
-      alt: "ld",
     },
   ];
   return (
@@ -53,7 +54,9 @@ function SocialMailPh() {
               />
             </a>
           </IconButton>
-          <Typography>sreyas1045@gmail.com</Typography>
+          <Typography sx={{ fontFamily: "montserrat" }}>
+            sreyas1045@gmail.com
+          </Typography>
         </Box>
         <Box className="flex items-center">
           <IconButton>
@@ -67,7 +70,7 @@ function SocialMailPh() {
               />
             </a>
           </IconButton>
-          <Typography>7736736085</Typography>
+          <Typography sx={{ fontFamily: "montserrat" }}>7736736085</Typography>
         </Box>
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           {medias.map((media, index) => {
@@ -83,13 +86,7 @@ function SocialMailPh() {
                 key={index}
               >
                 <Link target="_blank" rel="noopener" href={media.link}>
-                  <img
-                    height={"25px"}
-                    width={"25px"}
-                    style={{ borderRadius: "50%" }}
-                    src={media.logo}
-                    alt={media.alt}
-                  />
+                  <media.logo />
                 </Link>
               </IconButton>
             );

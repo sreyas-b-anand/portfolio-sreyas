@@ -6,13 +6,12 @@ import next from "../assets/skillsimg/next.jpeg";
 import html from "../assets/skillsimg/html.jpeg";
 import js from "../assets/skillsimg/js.jpeg";
 import css from "../assets/skillsimg/css.jpeg";
-import cpp from "../assets/skillsimg/cpp.jpg";
+import cpp from "../assets/skillsimg/cpp.jpeg";
 import cp from "../assets/skillsimg/cp.jpeg";
 
 import MiniNavbar from "../components/Navbar/MiniNavbar";
 
 export const SkillContext = React.createContext(null);
-
 
 function About() {
   const skills = [
@@ -25,11 +24,10 @@ function About() {
     { lang: "C", logo: cp },
   ];
   return (
-    <div  className="w-screen h-screen bg-bg text-primary">
-      
+    <div className="w-screen h-screen bg-bg text-primary">
       <main id="about" className="w-screen h-screen ">
-      <ResponsiveAppBar />
-        <MiniNavbar   />
+        <ResponsiveAppBar />
+        <MiniNavbar />
         <article className="pt-8 px-8 flex items-center justify-center flex-col ">
           <div className=" border border-gray-700 rounded-2xl p-3">
             <h3 className="text-center flex items-center justify-center text-xl font-semibold pt-2 ">
