@@ -43,7 +43,14 @@ function SocialMailPh() {
         }}
       >
         <Box className="flex items-center">
-          <IconButton>
+          <IconButton
+            sx={{
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                color: "#8b9dc3",
+                transform: "scale(1.2)",
+              },
+            }}>
             <a href="mailto:sreyas1045gmail.com">
               <img
                 height={"35px"}
@@ -59,7 +66,15 @@ function SocialMailPh() {
           </Typography>
         </Box>
         <Box className="flex items-center">
-          <IconButton>
+          <IconButton
+          
+          sx={{
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              color: "#8b9dc3",
+              transform: "scale(1.2)",
+            },
+          }}>
             <a href="tel:+917736736085">
               <img
                 height={"35px"}
@@ -72,7 +87,7 @@ function SocialMailPh() {
           </IconButton>
           <Typography sx={{ fontFamily: "montserrat" }}>7736736085</Typography>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <Box sx={{ display: "flex", flexDirection: "row" , gap:1 }}>
           {medias.map((media, index) => {
             return (
               <IconButton
@@ -80,7 +95,7 @@ function SocialMailPh() {
                   transition: "transform 0.3s ease",
                   "&:hover": {
                     color: "#8b9dc3",
-                    transform: "scale(1.2)",
+                    transform: "scale(1.3)",
                   },
                 }}
                 key={index}

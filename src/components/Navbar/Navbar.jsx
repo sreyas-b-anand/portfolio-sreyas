@@ -10,7 +10,8 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 
 //router
-import { Link } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
+
 
 //assets
 import git from "../../assets/socialimg/git.jpg";
@@ -23,6 +24,8 @@ const pages = [
 ];
 
 function ResponsiveAppBar() {
+  const pathName = useHref();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -134,21 +137,19 @@ function ResponsiveAppBar() {
               pl: 4,
             }}
           >
-            {pages.map(
-              (
-                page //normal
-              ) => (
+            {pages.map((page) => {
+              const isActive = pathName.endsWith(page.href);
+              return (
                 <Link
-                  className="text-gray-400 hover:text-white"
-                  to={page.href}
-                  key={page.id}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, display: "block" }}
-                >
-                  {page.link}
-                </Link>
+                className={isActive ? "opacity-[1] hover:opacity-100" : "opacity-[0.5] hover:opacity-100"}
+                to={page.href}
+                key={page.id}
+                sx={{ my: 2, display: "block" }}
+              >
+                {page.link}
+              </Link>
               )
-            )}
+})}
           </Box>
           <Box
             sx={{
