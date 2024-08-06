@@ -15,13 +15,13 @@ export default function MyProjectComponent({ projects }) {
     <>
       <Typography
         sx={{ fontSize: "20px", fontFamily: "montserrat" }}
-        className="text-primary text-center w-screen p-2 "
+        className="text-primary text-center w-screen p-2 mt-3 "
       >
         My Projects
       </Typography>
       <React.Suspense fallback={<Loading />}>
         <Box
-          sx={{ display: "flex", flexDirection: { md: "row", xs: "column" } }}
+          sx={{ display: "flex", flexDirection: { md: "row", xs: "column" } , mx:3}}
           className="gap-6 items-center justify-center mt-4"
         >
           {projects.map((project) => {

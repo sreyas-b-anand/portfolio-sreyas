@@ -40,10 +40,11 @@ export default function SkillCard() {
                   maxWidth: 345,
                   backgroundColor: " black",
                   p: 2,
+                  transition : 'all 0.3s ease',
                   "&": { hover: { border: "solid white" } },
                 }}
                 key={index}
-                className="border border-gray-500 "
+                className="card-skill  "
               >
                 <CardMedia
                   sx={{

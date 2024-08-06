@@ -1,3 +1,4 @@
+//components
 import ResponsiveAppBar from "../components/Navbar/Navbar";
 import ContactMe from "../components/contactcomponents/Contact";
 import Social from "../components/contactcomponents/Social";

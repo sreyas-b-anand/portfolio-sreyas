@@ -1,14 +1,12 @@
-import React from 'react'
-import SkillCard from '../skills/SkillCard'
-
+import React from "react";
+import SkillCard from "../skills/SkillCard";
 
 const Skills = () => {
-    
   return (
     <>
-     <SkillCard />
+      <SkillCard />
     </>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
