@@ -10,6 +10,7 @@ import js from "../assets/skillsimg/js.jpeg";
 import css from "../assets/skillsimg/css.jpeg";
 import cpp from "../assets/skillsimg/cpp.jpeg";
 import cp from "../assets/skillsimg/cp.jpeg";
+import python from '../assets/skillsimg/python.jpeg'
 
 import MiniNavbar from "../components/Navbar/MiniNavbar";
 
@@ -17,13 +18,16 @@ export const SkillContext = React.createContext(null);
 
 function About() {
   const skills = [
-    { lang: "React", logo: react },
-    { lang: "Next js", logo: next },
-    { lang: "C++", logo: cpp },
-    { lang: "Html", logo: html },
-    { lang: "CSS", logo: css },
-    { lang: "JS", logo: js },
-    { lang: "C", logo: cp },
+    { lang: "React", logo: react, level: "Intermediate", description: "A library for building UIs." },
+    { lang: "Next.js", logo: next, level: "Basic", description: "A React framework for SSR." },
+    { lang: "C++", logo: cpp, level: "Intermediate", description: "A language for system and game development." },
+    { lang: "HTML", logo: html, level: "Intermediate", description: "The standard markup for web pages." },
+    { lang: "CSS", logo: css, level: "Intermediate", description: "A language for styling web pages." },
+    { lang: "JavaScript", logo: js, level: "Intermediate", description: "A language for web interactions." },
+    { lang: "C", logo: cp, level: "Intermediate", description: "A language for low-level programming." },
+    { lang: "Python", logo: python, level: "Basic", description: "A versatile, easy-to-read language." }
+    
+
   ];
   return (
     <div className="w-screen h-screen bg-bg text-primary">
@@ -46,7 +50,7 @@ function About() {
           </div>
         </article>
       </main>
-      <main id="skills" className="w-screen h-screen m-0">
+      <main id="skills" className="w-screen h-screen m-0  space-y-10">
         <SkillContext.Provider value={skills}>
           <Skills />
           <MiniNavbar />

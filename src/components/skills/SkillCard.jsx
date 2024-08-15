@@ -37,19 +37,21 @@ export default function SkillCard() {
             return (
               <Card
                 sx={{
-                  maxWidth: 345,
+                  maxWidth: 600,
+                  maxHeight : 300,
                   backgroundColor: " black",
-                  p: 2,
+                  p: 3,
+                  borderRadius:3,
                   transition : 'all 0.3s ease',
                   "&": { hover: { border: "solid white" } },
                 }}
                 key={index}
-                className="card-skill  "
+                className="flex items-center "
               >
                 <CardMedia
                   sx={{
-                    width: 200,
-                    height: 200,
+                    width: 110,
+                    height: 110,
                     objectFit: "fit",
                     borderRadius: "50%",
                   }}
@@ -59,14 +61,16 @@ export default function SkillCard() {
                 />
                 <CardContent className=" bg-black">
                   <Typography
-                    sx={{ fontFamily: "montserrat" }}
+                    sx={{ fontFamily: "montserrat" , fontSize : '21px'}}
                     gutterBottom
-                    variant="h6"
+                    
                     component="div"
                     className=" bg-[black]  text-center text-white"
                   >
                     {skill.lang}
                   </Typography>
+                  <Typography className="text-center text-gray-300"  sx={{fontFamily:"montserrat" , fontSize:'15px' }} >{skill.description}</Typography>
+                  <Typography className="text-center text-gray-400"  sx={{fontFamily:"montserrat" , fontSize:'13px', p:2 }}>Level : {skill.level}</Typography>
                 </CardContent>
               </Card>
             );

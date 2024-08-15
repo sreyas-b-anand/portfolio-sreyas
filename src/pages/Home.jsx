@@ -51,17 +51,17 @@ function Home() {
               </Typography>
             </div>
           </Box>
-          <Box className="w-64 flex items-center justify-center bg-gray-500 rounded gap-3 mt-9">
+          <Box className="w-64 flex items-center justify-center bg-gray-700 rounded gap-3 mt-9">
             {icons.map((icon) => {
               return (
                 <Link
-                  className="hover:brightness-200 "
+                  className="hover:brightness-200 p-1"
                   target="_blank"
                   rel="noopener noreferrer"
                   href={icon.href}
                 >
-                  <IconButton>
-                    <icon.icon />
+                  <IconButton >
+                    <icon.icon color="white" className="transition-all duration-[0.5s] ease-in-out hover:scale-[1.3]"/>
                   </IconButton>
                 </Link>
               );
