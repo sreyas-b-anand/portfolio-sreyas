@@ -6,7 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 
 // router
 import { Link, useHref } from "react-router-dom";
@@ -17,6 +16,7 @@ import { DarkContext } from "../../App";
 // assets
 import git from "../../assets/socialimg/git.jpg";
 import Sidebar from "./Sidebar";
+import { MaterialUISwitch } from "../switch/Switch";
 
 const pages = [
   { id: 1, link: "Home", href: "/" },
@@ -30,8 +30,7 @@ function ResponsiveAppBar() {
   const pathName = useHref();
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [display, setDisplay] = useState(true);
-
+  
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
@@ -126,56 +125,19 @@ function ResponsiveAppBar() {
 
             <Box
               sx={{
-                display: "flex",
+                display: { xs: "none", md: "flex" },
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 3,
               }}
             >
-              <Box
-                sx={{
-                  display: { xs: "none", md: "flex" },
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "Montserrat",
-                  fontWeight: 400,
-                  gap: 1,
-                  fontSize:'14px'
+              <MaterialUISwitch
+                checked={darkMode ? true : false}
+                onChange={() => {
+                  setDarkMode(!darkMode);
                 }}
-              >
-                {darkMode ? "Light Mode?" : "Dark Mode?"}
-                {display && (
-                  <Button
-                    sx={{ textDecoration: "none" }}
-                    className={`transition duration-300 ease-in-out px-4 py-2 font-normal rounded-md text-primary dark:text-text_primary ${
-                      darkMode
-                        ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                        : "bg-gray-300 text-gray-800 hover:bg-gray-400"
-                    }`}
-                    onClick={() => {
-                      setDarkMode(true);
-                      setDisplay(false);
-                    }}
-                  >
-                    Click Here
-                  </Button>
-                )}
-                {!display && (
-                  <Button
-                    className={`transition duration-300 ease-in-out px-4 py-2 font-normal  rounded-md ${
-                      darkMode
-                        ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                        : "bg-gray-300 text-gray-800 hover:bg-gray-400"
-                    }`}
-                    onClick={() => {
-                      setDarkMode(false);
-                      setDisplay(true);
-                    }}
-                  >
-                    Click Here
-                  </Button>
-                )}
-              </Box>
+              />
+
               <Box
                 sx={{
                   height: "100%",

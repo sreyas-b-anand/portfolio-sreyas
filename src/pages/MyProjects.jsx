@@ -50,7 +50,7 @@ function MyProjects() {
   const projects = [grammr, tictactoe, bookFinder];
 
   return (
-    <div className="w-screen h-screen bg-bg text-primary dark:bg-bg_dark dark:text-text_primary">
+    <div className="w-screen md:h-screen sm:h-fit bg-bg text-primary dark:bg-bg_dark dark:text-text_primary">
       <ResponsiveAppBar />
       <Typography
         sx={{ fontSize: "20px", fontFamily: "montserrat", fontWeight: 550 }}

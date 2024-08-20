@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+import { MaterialUISwitch } from "../switch/Switch";
+import { DarkContext } from "../../App";
 
 const Sidebar = ({ closeSidebar }) => {
+  const {darkMode , setDarkMode } = useContext(DarkContext)
   useEffect(() => {
     const sidebar = document.getElementById("sidebar");
 
@@ -73,20 +76,6 @@ const Sidebar = ({ closeSidebar }) => {
           <Link to="/About">About</Link>
           <Link to="/MyProjects">My Projects</Link>
           <Link to="/Contact">Contact</Link>
-        </Box>
-
-        <Box
-          component="div"
-          sx={{
-            position: "fixed",
-            bottom: "10%",
-            pl: 3,
-            gap: 3,
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-          }}
-        >
           <Link
             to="https://github.com/sreyas-b-anand"
             target="_blank"
@@ -94,6 +83,25 @@ const Sidebar = ({ closeSidebar }) => {
           >
             GitHub
           </Link>
+        </Box>
+
+        <Box
+          component="div"
+          sx={{
+            position: "fixed",
+            bottom: "5%",
+            pl: 3,
+            gap: 3,
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+          }}
+        >
+             <MaterialUISwitch checked={darkMode?true : false}
+              onChange={()=>{
+               setDarkMode(!darkMode)
+              }} />
+         
         </Box>
       </Box>
     </Box>

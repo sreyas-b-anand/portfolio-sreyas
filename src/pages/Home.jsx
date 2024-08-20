@@ -50,9 +50,9 @@ function Home() {
                   }}
                 >
                   Hi , I'm{" "}
-                  <p className="text-primary dark:text-cyan-400">
+                  <section className="text-primary dark:text-cyan-400">
                     Sreyas B Anand
-                  </p>
+                  </section>
                 </Typography>
                 <Typography
                   className="text-secondary"

@@ -21,15 +21,20 @@ import React, { useState, useEffect } from "react";
 
 export const DarkContext = React.createContext(null);
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return window.localStorage.getItem("darkMode") === "true";
+  });
+ 
   useEffect(() => {
     const app = document.documentElement;
-
+    
+    
     if (darkMode) {
       app.classList.add("dark");
     } else {
       app.classList.remove("dark");
     }
+    window.localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   const [display, setDisplay] = useState(true);
