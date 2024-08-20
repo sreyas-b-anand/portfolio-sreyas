@@ -1,6 +1,7 @@
 import { Home, Info } from "@mui/icons-material";
 import { Link } from "react-scroll";
-export default function Footer() {
+
+export default function HomeInfo() {
   return (
     <>
       <main className=" fixed  flex items-center justify-center gap-3  ">
@@ -18,6 +19,7 @@ export default function Footer() {
         >
           <Info />
         </Link>
+        
       </main>
     </>
   );

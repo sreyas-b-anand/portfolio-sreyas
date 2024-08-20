@@ -32,10 +32,10 @@ function SocialMailPh() {
         className=" flex flex-col "
         sx={{
           maxWidth: 400,
-          px: 3,
+          px: 4,
           gap: 4,
           borderRadius: "10px ",
-          boxShadow: 3,
+          boxShadow: 1,
           flexWrap: "wrap",
           alignItems: "start",
           justifyContent: "center",
@@ -101,7 +101,7 @@ function SocialMailPh() {
                 key={index}
               >
                 <Link target="_blank" rel="noopener" href={media.link}>
-                  <media.logo />
+                  <media.logo color="black"/>
                 </Link>
               </IconButton>
             );

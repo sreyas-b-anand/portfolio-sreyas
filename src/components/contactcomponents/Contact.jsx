@@ -42,12 +42,13 @@ const ContactMe = () => {
   return (
     <>
       <Box
-        className="bg-[#121212] h-96"
+        className="bg-[#faff97] h-96 dark:bg-gray-800 dark:text-text_primary"
         component="form"
         onSubmit={handleSubmit}
         sx={{
           fontFamily: "montserrat",
           px: 4,
+          
           maxHeight: 400,
           display: "flex",
           flexDirection: "column",
@@ -57,7 +58,7 @@ const ContactMe = () => {
           maxWidth: 480,
           borderTopLeftRadius: "10px",
           borderBottomLeftRadius: { md: "10px", xs: 0 },
-          boxShadow: 2,
+          boxShadow: 1,
           borderTopRightRadius: { xs: "10px", md: 0 },
         }}
       >
@@ -65,10 +66,12 @@ const ContactMe = () => {
           variant="h5"
           mb={2}
           sx={{
+            fontWeight: 530,
             fontFamily: "montserrat",
-            color: "white",
+            color: "#2f2f2f",
             pt: 4,
           }}
+          className="dark:text-text_primary"
         >
           Contact Me
         </Typography>
@@ -85,7 +88,7 @@ const ContactMe = () => {
           <Grid container spacing={2} columns={16}>
             <Grid item xs={8}>
               <TextField
-                className="bg-white"
+                className="bg-[#ffffff]"
                 required
                 id="standard-search"
                 label="First name"
@@ -99,12 +102,16 @@ const ContactMe = () => {
                   maxWidth: 450,
                   color: "#2f2f2f",
                   ml: 2,
+                  borderColor: "#e5e7eb",
+                  "& .MuiInputBase-input": {
+                    color: "#2f2f2f",
+                  },
                 }}
               />
             </Grid>
             <Grid item xs={8}>
               <TextField
-                className="bg-white"
+                className="bg-[#ffffff]"
                 id="standard-search"
                 label="Last name"
                 type="text"
@@ -113,12 +120,15 @@ const ContactMe = () => {
                 onChange={(e) => setlastName(e.target.value)}
                 sx={{
                   fontFamily: "montserrat",
-                  backgroundColor: "white",
-                  border: "#999999",
+                  backgroundColor: "#ffffff",
+                  border: "#e5e7eb",
                   maxWidth: 450,
                   color: "#2f2f2f",
                   mr: 2,
                   borderRadius: 1,
+                  "& .MuiInputBase-input": {
+                    color: "#2f2f2f",
+                  },
                 }}
               />
             </Grid>
@@ -127,7 +137,7 @@ const ContactMe = () => {
         <Grid container spacing={2} sx={{ maxWidth: 450 }}>
           <Grid item xs={12} sx={{ mx: 2 }}>
             <TextField
-              className="bg-white"
+              className="bg-[#ffffff]"
               required
               id="standard-search"
               label="Email"
@@ -138,10 +148,13 @@ const ContactMe = () => {
               fullWidth
               sx={{
                 fontFamily: "montserrat",
-                backgroundColor: "white",
+                backgroundColor: "#ffffff",
                 color: "#2f2f2f",
                 borderRadius: 1,
-                boxShadow: 2,
+                borderColor: "#e5e7eb",
+                "& .MuiInputBase-input": {
+                  color: "#2f2f2f",
+                },
               }}
             />
           </Grid>
@@ -157,10 +170,10 @@ const ContactMe = () => {
               fullWidth
               sx={{
                 fontFamily: "montserrat",
-                backgroundColor: "white",
+                backgroundColor: "#ffffff",
                 color: "#2f2f2f",
                 borderRadius: 1,
-                boxShadow: 2,
+                borderColor: "#e5e7eb",
               }}
             />
           </Grid>
@@ -168,15 +181,19 @@ const ContactMe = () => {
         <Button
           type="submit"
           sx={{
-            backgroundColor: "#ffffff",
-            color: "black",
-            fontWeight : 600,
+            backgroundColor: "black",
+            color: "#ffffff",
+            fontWeight: 600,
             px: 2,
             mb: 2,
             fontFamily: "montserrat",
-           
+            "&": {
+              hover: {
+                backgroundColor: "black",
+                opacity: 1,
+              },
+            },
           }}
-          className="hover:shadow-[0_0_0_4px_white,0_0_0_8px_black] hover:bg-black hover:text-white"
         >
           Send
         </Button>

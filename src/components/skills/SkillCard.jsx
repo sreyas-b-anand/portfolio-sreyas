@@ -13,10 +13,10 @@ export default function SkillCard() {
 
   return (
     <>
-      <main className="flex flex-col items-center justify-center gap-3">
+      <main className="flex flex-col items-center justify-center gap-3 p-5">
         <div>
           <Typography
-            sx={{ fontFamily: "montserrat", fontSize: 25 }}
+            sx={{ fontFamily: "montserrat", fontSize: 25, fontWeight: 650 }}
             className="p-3 text-center pb-2  "
           >
             Skills
@@ -28,8 +28,8 @@ export default function SkillCard() {
             borderRadius: 4,
             gap: { xs: 6, md: 4 },
             display: { xs: "grid", md: "grid" },
-            gridTemplateColumns: { md: "repeat(4, 1fr)" },
-            gridTemplateRows: { md: "repeat(3, auto)" },
+            gridTemplateColumns: { md: "repeat(3, 1fr)", sm: "repeat(1,1fr)" },
+            gridTemplateRows: { md: "repeat(3, auto)", xs: "repeat(1,1fr)" },
           }}
           className="p-3   "
         >
@@ -38,15 +38,14 @@ export default function SkillCard() {
               <Card
                 sx={{
                   maxWidth: 600,
-                  maxHeight : 300,
-                  backgroundColor: " black",
+                  height: 200,
                   p: 3,
-                  borderRadius:3,
-                  transition : 'all 0.3s ease',
+                  borderRadius: 3,
+                  transition: "all 0.3s ease",
                   "&": { hover: { border: "solid white" } },
                 }}
                 key={index}
-                className="flex items-center "
+                className="flex items-center bg-cardbg border-border  dark:bg-bg_card_dark dark:text-text_primary"
               >
                 <CardMedia
                   sx={{
@@ -59,18 +58,27 @@ export default function SkillCard() {
                   image={skill.logo}
                   alt="logo"
                 />
-                <CardContent className=" bg-black">
+                <CardContent className=" bg-cardbg dark:bg-bg_card_dark ">
                   <Typography
-                    sx={{ fontFamily: "montserrat" , fontSize : '21px'}}
+                    sx={{ fontFamily: "montserrat", fontSize: "21px" }}
                     gutterBottom
-                    
                     component="div"
-                    className=" bg-[black]  text-center text-white"
+                    className="   text-center text-primary dark:text-text_primary"
                   >
                     {skill.lang}
                   </Typography>
-                  <Typography className="text-center text-gray-300"  sx={{fontFamily:"montserrat" , fontSize:'15px' }} >{skill.description}</Typography>
-                  <Typography className="text-center text-gray-400"  sx={{fontFamily:"montserrat" , fontSize:'13px', p:2 }}>Level : {skill.level}</Typography>
+                  <Typography
+                    className="text-center text-[gray] dark:text-[#c4c4c4]"
+                    sx={{ fontFamily: "montserrat", fontSize: "15px" }}
+                  >
+                    {skill.description}
+                  </Typography>
+                  <Typography
+                    className="text-center text-[#656464] dark:text-[#cdcdcd]"
+                    sx={{ fontFamily: "montserrat", fontSize: "11px", p: 2 }}
+                  >
+                    Level : {skill.level}
+                  </Typography>
                 </CardContent>
               </Card>
             );

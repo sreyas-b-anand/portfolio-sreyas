@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -10,82 +10,82 @@ import Typography from "@mui/material/Typography";
 //components
 import Loading from "../projects/Loading";
 
-export default function MyProjectComponent({ projects }) {
+export default function MyProjectComponent({ project }) {
   return (
     <>
-      <Typography
-        sx={{ fontSize: "20px", fontFamily: "montserrat" }}
-        className="text-primary text-center w-screen p-2 mt-3 "
-      >
-        My Projects
-      </Typography>
       <React.Suspense fallback={<Loading />}>
-        <Box
-          sx={{ display: "flex", flexDirection: { md: "row", xs: "column" } , mx:3}}
-          className="gap-6 items-center justify-center mt-4"
-        >
-          {projects.map((project) => {
-            return (
+        <Link to={project.weblink} target="_blank" rel="noopener norefferer">
+          <Card
+            sx={{
+              maxWidth: 340,
+              maxHeight: 500,
+              boxShadow: 1,
+              transition: "all ease-in-out 0.4s",
+            }}
+            key={project.id}
+            component={"div"}
+            className="text-primary   hover:scale-[1.05] dark:bg-bg_dark dark:text-text_primary dark:border-[#3B4148]"
+          >
+            <CardMedia
+              component="img"
+              alt="img"
+              height="140 "
+              image={project.image}
+              sx={{ objectFit: "cover" }}
+            />
+            <CardContent className="bg-cardbg flex flex-col gap-2 dark:bg-bg_card_dark dark:text-text_primary">
+              <Typography
+                variant="h5"
+                component="div"
+                className="text-primary dark:text-text_primary"
+                sx={{ fontFamily: "montserrat" }}
+              >
+                {project.header}
+              </Typography>
+              <Typography
+                variant="body"
+                sx={{ fontSize: "16px", fontFamily: "montserrat" }}
+                className="text-primary dark:text-[#c2c2c2]"
+              >
+                {project.desc}
+              </Typography>
+              <Typography
+                className="gap-3 "
+                sx={{
+                  fontFamily: "Montserrat",
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              ></Typography>
+              <Typography
+                sx={{ fontFamily: "montserrat", fontSize: "14px" }}
+                className="text-sm text-[#3f3f3f] dark:text-[#c2c2c2] "
+              >
+                Learning Outcome : {project.learningOutcome}
+              </Typography>
+            </CardContent>
+            <CardActions className="bg-cardbg dark:bg-bg_card_dark dark:text-text_primary">
               <Link
-                to={project.weblink}
+                to={project.gitlink}
+                size="small"
                 target="_blank"
                 rel="noopener norefferer"
+                className="text-primary px-2 bg-[#f6df49] rounded-[5px] hover:text-[black] hover:bg-cardbg dark:bg-bg_dark dark:text-white"
               >
-                <Card
-                  sx={{
-                    maxWidth: 340,
-                    boxShadow: 1,
-                    transition: "all ease-in-out 0.4s",
-                  }}
-                  key={project.id}
-                  component={"div"}
-                  className="text-primary   hover:scale-[1.05]"
-                >
-                  <CardMedia
-                    component="img"
-                    alt="img"
-                    height="140 "
-                    image={project.image}
-                    sx={{ objectFit: "cover" }}
-                  />
-                  <CardContent className="bg-cardbg">
-                    <Typography
-                      variant="h5"
-                      component="div"
-                      className="text-primary "
-                      sx={{ fontFamily: "montserrat" }}
-                    >
-                      {project.header}
-                    </Typography>
-                    <Typography variant="body" className="text-primary">
-                      {project.desc}
-                    </Typography>
-                  </CardContent>
-                  <CardActions className="bg-cardbg">
-                    <Link
-                      to={project.gitlink}
-                      size="small"
-                      target="_blank"
-                      rel="noopener norefferer"
-                      className="text-primary px-2 bg-bg rounded-[5px] hover:bg-gray-900 "
-                    >
-                      Git
-                    </Link>
-                    <Link
-                      to={project.weblink}
-                      size="small"
-                      target="_blank"
-                      rel="noopener norefferer"
-                      className="text-primary px-2 bg-bg rounded-[5px] hover:bg-gray-900"
-                    >
-                      Web
-                    </Link>
-                  </CardActions>
-                </Card>
+                Git
               </Link>
-            );
-          })}
-        </Box>
+              <Link
+                to={project.weblink}
+                size="small"
+                target="_blank"
+                rel="noopener norefferer"
+                className="text-primary px-2 bg-[#f6df49] rounded-[5px] hover:text-[black] hover:bg-cardbg dark:bg-bg_dark dark:text-white"
+              >
+                Web
+              </Link>
+            </CardActions>
+          </Card>
+        </Link>
       </React.Suspense>
     </>
   );

@@ -16,7 +16,7 @@ function Social() {
           alignItems: "center",
           flexWrap: "wrap",
           justifyContent: "center",
-          boxShadow: 3,
+          boxShadow: 1,
           borderTopRightRadius: { md: "10px", xs: 0 },
           borderBottomRightRadius: "10px",
           gap: 2,
@@ -30,7 +30,7 @@ function Social() {
             px: 6,
             gap: 4,
             borderRadius: "10px ",
-            boxShadow: 2,
+            boxShadow: 1,
 
             py: 2,
           }}

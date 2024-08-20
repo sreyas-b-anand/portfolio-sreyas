@@ -2,7 +2,7 @@ import DotLoader from "react-spinners/DotLoader";
 
 function Animation() {
   return (
-    <main className="w-screen h-screen flex items-center justify-center">
+    <main className="w-screen h-screen flex items-center justify-center bg-bg dark:bg-bg_dark">
       <div className="sweet-loading ">
         <DotLoader
           color="blue"

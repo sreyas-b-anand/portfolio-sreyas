@@ -6,7 +6,7 @@ import Social from "../components/contactcomponents/Social";
 import { Container } from "@mui/material";
 function Contact() {
   return (
-    <div className="w-screen h-screen bg-bg text-primary ">
+    <div className="w-screen md:h-screen sm:h-auto bg-bg text-primary dark:bg-bg_dark dark:text-text_primary">
       <ResponsiveAppBar />
       <Container
         sx={{
@@ -15,7 +15,7 @@ function Contact() {
           justifyContent: "center",
           flexDirection: { md: "row", xs: "column" },
         }}
-        className="w-screen  my-16"
+        className="w-screen  mt-9 pb-3"
       >
         <ContactMe />
         <Social />

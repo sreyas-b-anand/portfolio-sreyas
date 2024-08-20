@@ -1,6 +1,0 @@
-.card {
-  border: solid 2px;
-  border-image: linear-gradient(to right, rgb(2, 221, 255), rgb(0, 153, 255)) 1;
-  padding: 10px;
-  transition: all 0.4s ease-in-out;
-}

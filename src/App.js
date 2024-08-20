@@ -14,22 +14,32 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 //components
-import Animation from './components/animation/Animation'
+import Animation from "./components/animation/Animation";
 
 //react
-import { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-
+export const DarkContext = React.createContext(null);
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    const app = document.documentElement;
+
+    if (darkMode) {
+      app.classList.add("dark");
+    } else {
+      app.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   const [display, setDisplay] = useState(true);
   useEffect(() => {
-  
-   const timer =  setTimeout(() => {
+    const timer = setTimeout(() => {
       setDisplay(false);
     }, 1500);
 
-    return ()=> clearTimeout(timer)
-  } , []);
+    return () => clearTimeout(timer);
+  }, []);
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/">
@@ -43,8 +53,12 @@ function App() {
   );
   return (
     <>
-    {display && <Animation />}
-      {!display && <RouterProvider router={router} />}
+      {display && <Animation />}
+      {!display && (
+        <DarkContext.Provider value={{ darkMode, setDarkMode }}>
+          <RouterProvider router={router} />
+        </DarkContext.Provider>
+      )}
     </>
   );
 }
