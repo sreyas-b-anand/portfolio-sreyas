@@ -9,7 +9,7 @@ import { Box, Typography } from "@mui/material";
 import grammrimg from "../assets/projectsimg/grammr.jpg";
 import bookFinderimg from "../assets/projectsimg/bookfinder.jpg";
 import tic from "../assets/projectsimg/tic.jpg";
-
+import taskerImg from '../assets/projectsimg/tasker.jpg'
 function MyProjects() {
   const grammr = {
     header: "Grammr",
@@ -18,9 +18,8 @@ function MyProjects() {
     weblink: "https://grammr.vercel.app/",
     id: 1,
     image: grammrimg,
-    toolsUsed: ["Next.js", "Gemini API", "tailwind CSS"],
-    learningOutcome:
-      "Improved API integration and real-time functionality with Next.js.",
+    techStack: ["Next.js", "Gemini API", "Tailwind CSS"],
+   
   };
 
   const tictactoe = {
@@ -30,9 +29,8 @@ function MyProjects() {
     weblink: "https://github.com/sreyas-b-anand/tictactoeCpp",
     id: 2,
     image: tic,
-    toolsUsed: ["C++"],
-    learningOutcome:
-      "Refined algorithms and game logic in a command-line environment.",
+    techStack: ["C++"],
+    
   };
 
   const bookFinder = {
@@ -42,12 +40,20 @@ function MyProjects() {
     weblink: "https://booklib-sreyas.vercel.app/",
     id: 3,
     image: bookFinderimg,
-    toolsUsed: ["React", "Google Books API", "Bootstrap"],
-    learningOutcome:
-      "Enhanced skills in working with APIs and dynamic data management in React.",
+    techStack: ["React", "Google Books API", "Bootstrap"],
+  
   };
-
-  const projects = [grammr, tictactoe, bookFinder];
+const tasker = {
+  header: "Tasker",
+    desc: "I have created a simple to-do app using MERN stack.",
+    gitlink: "https://github.com/sreyas-b-anand/todo-mern",
+    weblink: "https://todo-mern-tu07.onrender.com",
+    id: 4,
+    image: taskerImg,
+    techStack: ["MERN", "Chakra UI", "Tailwind CSS"],
+    
+}
+  const projects =  [ tasker ,grammr, tictactoe, bookFinder];
 
   return (
     <div className="w-screen md:h-screen sm:h-fit bg-bg text-primary dark:bg-bg_dark dark:text-text_primary">

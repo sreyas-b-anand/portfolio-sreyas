@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Card from "@mui/material/Card";
+import{ Card, Box }from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -57,12 +57,13 @@ export default function MyProjectComponent({ project }) {
                   flexDirection: "row",
                 }}
               ></Typography>
-              <Typography
-                sx={{ fontFamily: "montserrat", fontSize: "14px" }}
-                className="text-sm text-[#3f3f3f] dark:text-[#c2c2c2] "
-              >
-                Learning Outcome : {project.learningOutcome}
-              </Typography>
+              <Box sx={{display:"flex" , alignItems:'center' , gap:1 , width:'100%' , flexWrap:'wrap', fontFamily:'Montserrat' , fontSize:'11px'}}>
+                  {project.techStack.map((t , index) =>{
+                    return <Box key={index} sx={{p:1, }} className="bg-yellow-200 rounded-full dark:bg-gray-500">
+                    {t}
+                    </Box>
+                  })}
+              </Box>
             </CardContent>
             <CardActions className="bg-cardbg dark:bg-bg_card_dark dark:text-text_primary">
               <Link
