@@ -61,7 +61,7 @@ function Home() {
                     fontSize: { md: "25px", xs: "16px" },
                   }}
                 >
-                  I am a Frontend Devolper
+                  I am a Frontend Developer
                 </Typography>
               </div>
             </Box>
