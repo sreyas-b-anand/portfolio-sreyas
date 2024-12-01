@@ -28,7 +28,7 @@ function Home() {
         >
           <ResponsiveAppBar />
 
-          <main className="w-screen flex flex-wrap items-center justify-center h-[30rem] -z-10 flex-col gap-5 text-primary dark:bg-bg_dark dark:text-text_primary z-0">
+          <main className="w-screen flex flex-wrap items-center justify-center h-[30rem]  flex-col gap-5 text-primary dark:bg-bg_dark dark:text-text_primary z-0">
             <Box sx={{ height: 140, width: 140, borderRadius: "50%" }}>
               <img
                 className="rounded-[50%] border-2  p-1 "
